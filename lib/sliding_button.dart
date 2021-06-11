@@ -129,7 +129,7 @@ class SlidingButtonState extends State<SlidingButton> {
   void initState() {
     super.initState();
     // Initialize properties used on the slide button
-    _slideButtonSize = (buttonHeight! - (slideButtonMargin! * 2))!;
+    _slideButtonSize = (buttonHeight! - (slideButtonMargin! * 2));
     _slideButtonMargin = slideButtonMargin;
     // Always add a default widget for slide successful event
     if (this.widgetWhenSlideIsCompleted == null) {
@@ -193,7 +193,7 @@ class SlidingButtonState extends State<SlidingButton> {
         onHorizontalDragStart: (dragDetails) {
           if (_isSlideEnabled) {
             _isSlideStarted = true;
-            _slideButtonSize = (buttonHeight! + _slideButtonMarginDragOffset)!;
+            _slideButtonSize = (buttonHeight! + _slideButtonMarginDragOffset);
             _slideButtonMargin = 0;
             setState(() {});
           }
@@ -201,7 +201,7 @@ class SlidingButtonState extends State<SlidingButton> {
         onHorizontalDragUpdate: (dragUpdateDetails) {
           if (_isSlideStarted) {
             _slideButtonMarginDragOffset += dragUpdateDetails.delta.dx;
-            _slideButtonSize = (buttonHeight! + _slideButtonMarginDragOffset)!;
+            _slideButtonSize = (buttonHeight! + _slideButtonMarginDragOffset);
             _slideButtonMargin = 0;
             // Check for minimum values that must be respected. We don't animate the slide button below the minimum.
             _slideButtonMarginDragOffset = _slideButtonMarginDragOffset < 0
@@ -313,7 +313,7 @@ class SlidingButtonState extends State<SlidingButton> {
   }
 
   void _resetSlideButton() {
-    _slideButtonSize = (buttonHeight! - (slideButtonMargin! * 2))!;
+    _slideButtonSize = (buttonHeight! - (slideButtonMargin! * 2));
     _slideButtonMargin = slideButtonMargin;
   }
 
