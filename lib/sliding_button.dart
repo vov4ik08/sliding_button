@@ -222,8 +222,9 @@ class SlidingButtonState extends State<SlidingButton> {
         onHorizontalDragEnd: (dragDetails) {
           if (_isSlideEnabled || _isSlideStarted) {
             // Check if the slide event has reached the minimum threshold to be considered a successful slide event
-            final RenderObject? renderBox =
-                _buttonKey.currentContext!.findRenderObject();
+            final RenderBox? renderBox =
+                _buttonKey.currentContext!.findRenderObject() as RenderBox;
+
             if (_slideButtonSize! >=
                 successfulThreshold! * renderBox!.size.width) {
               _slideButtonSize = renderBox.size.width;
