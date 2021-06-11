@@ -1,6 +1,6 @@
 name: sliding_button
 description: A Flutter package that enables apps to use a slide button to confirm actions.
-version: 0.0.4
+version: 0.0.5
 author: John Doe <me@johndoe.dev>
 homepage: https://johndoe.dev/
 

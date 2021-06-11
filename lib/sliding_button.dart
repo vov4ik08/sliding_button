@@ -154,16 +154,16 @@ class SlidingButtonState extends State<SlidingButton> {
       child: GestureDetector(
         onTapDown: (tapDetails) {
           // Check if the tap down event has occurred inside the slide button
-          final RenderObject? renderBox =
-              _slideButtonKey.currentContext!.findRenderObject();
+          final RenderBox? renderBox =
+              _slideButtonKey.currentContext!.findRenderObject() as RenderBox;
           final slideButtonOffset = renderBox!.localToGlobal(Offset.zero);
           // On all positions I've added the _slideButtonMargin. Basically we use the _slideButtonMargin as a invisible touchable area that triggers the slide event
-          final startXPosition = slideButtonOffset.dx - _slideButtonMargin;
+          final startXPosition = slideButtonOffset.dx - _slideButtonMargin!;
           final endXPosition =
-              startXPosition + buttonHeight + _slideButtonMargin;
-          final startYPosition = slideButtonOffset.dy - _slideButtonMargin;
+              startXPosition + buttonHeight! + _slideButtonMargin!;
+          final startYPosition = slideButtonOffset.dy - _slideButtonMargin!;
           final endYPosition =
-              startYPosition + buttonHeight + _slideButtonMargin;
+              startYPosition + buttonHeight! + _slideButtonMargin!;
           // We only enable the slide gesture if the tap occurs inside the slide button
           if ((tapDetails.globalPosition.dx >= startXPosition &&
                   tapDetails.globalPosition.dx <= endXPosition) &&
